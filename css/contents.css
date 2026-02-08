@@ -1,0 +1,57 @@
+/* 内容面板容器 */
+.content-panel {
+  --offset-x: -1000px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(50% + var(--offset-x)), -50%);
+  
+  width: calc(100vw * 2 / 3);
+  max-width: 1200px;
+  height: 90vh;
+  
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 可滚动区域 */
+.scrollable-content {
+  height: 100%;
+  padding: 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+/* WebKit 滚动条样式 */
+.scrollable-content::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollable-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollable-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 文字样式 */
+.scrollable-content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+.scrollable-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #222;
+  margin-bottom: 16px;
+}

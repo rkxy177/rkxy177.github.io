@@ -1,18 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>我的个人主页</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contents.css" />
+  <link rel="stylesheet" href="css/audio.css" />
 </head>
+
+
 <body>
-  <h1>欢迎来到我的 GitHub 主页！</h1>
-  <p>这是由 GitHub Pages 托管的静态网站。</p>
-  <nav class="navbar">
-  <div>My Site</div>
-  <div>
-    <a href="/">首页</a>
-    <a href="/about">关于</a>
-    <a href="/contact">联系</a>
+  <!-- 全屏背景视频 -->
+  <video autoplay muted loop id="bg-video">
+    <source src="images/background.mp4" type="video/mp4" />
+    您的浏览器不支持视频标签。
+  </video>
+  <!-- 背景音乐 -->
+<audio id="bg-music" loop>
+  <source src="audio/background.mp3" type="audio/mpeg">
+</audio>
+
+  <!-- 音乐控制面板 -->
+  <div class="music-control-panel">
+    <!-- 圆形播放按钮 -->
+    <div class="play-btn" id="playBtn">
+      <span class="note-icon">♪</span>
+    </div>
+
+    <!-- 音量控制条 -->
+    <div class="volume-slider-container">
+      <div class="volume-plus" id="volUp">+</div>
+      <div class="volume-track" id="volumeTrack">
+        <div class="volume-thumb" id="volumeThumb"></div>
+      </div>
+      <div class="volume-minus" id="volDown">−</div>
+    </div>
   </div>
-</nav>
+
+  <!-- 新的内容面板 -->
+  <div class="content-panel">
+    <div class="scrollable-content">
+      <!-- 在这里放置你的所有文字内容 -->
+      <h1>欢迎来到我的主页</h1>
+      <p>这是第一段介绍文字……</p>
+      <p>你可以在这里写很多内容，当内容超出面板高度时，右侧会出现一个细滚动条。</p>
+      <p>继续添加更多段落以测试滚动效果……</p>
+      <p>例如：关于我、技能、项目经历、联系方式等。</p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      
+      <!-- 可继续添加 -->
+    </div>
+  </div>
+
+
+
+
+
+
+<script>
+  const audio = document.getElementById('bg-music');
+  const playBtn = document.getElementById('playBtn');
+  const noteIcon = playBtn.querySelector('.note-icon');
+  const volumeTrack = document.getElementById('volumeTrack');
+  const volumeThumb = document.getElementById('volumeThumb');
+
+  // 初始化音量
+  let currentVolume = 0.5;
+  audio.volume = currentVolume;
+  updateThumbPosition();
+
+  // 播放/暂停
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play().catch(e => {
+        alert('请允许声音播放');
+      });
+      playBtn.classList.add('playing');
+    } else {
+      audio.pause();
+      playBtn.classList.remove('playing');
+    }
+  });
+
+  // === 核心：平滑音量控制 ===
+
+  // 点击滑轨：直接跳到该位置
+  volumeTrack.addEventListener('click', (e) => {
+    setVolumeFromClick(e);
+  });
+
+  // 拖拽滑块
+  let isDragging = false;
+
+  volumeThumb.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    e.preventDefault(); // 防止文本选中等干扰
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    setVolumeFromDrag(e);
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  // 触摸屏支持（可选，提升移动端体验）
+  volumeThumb.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    e.preventDefault();
+  });
+
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    setVolumeFromDrag(e.touches[0]);
+  });
+
+  window.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+
+  // 根据点击位置设置音量
+  function setVolumeFromClick(event) {
+    const rect = volumeTrack.getBoundingClientRect();
+    const clickY = event.clientY - rect.top;
+    const ratio = 1 - (clickY / rect.height); // 顶部=1, 底部=0
+    setVolume(ratio);
+  }
+
+  // 根据拖拽位置设置音量
+  function setVolumeFromDrag(pointerEvent) {
+    const rect = volumeTrack.getBoundingClientRect();
+    let y = pointerEvent.clientY - rect.top;
+    // 限制在滑轨范围内
+    y = Math.max(0, Math.min(y, rect.height));
+    const ratio = 1 - (y / rect.height);
+    setVolume(ratio);
+  }
+
+  // 统一设置音量并更新滑块
+  function setVolume(value) {
+    currentVolume = Math.max(0, Math.min(1, value)); // 限制 [0,1]
+    audio.volume = currentVolume;
+    updateThumbPosition();
+  }
+
+  // 更新滑块视觉位置
+  function updateThumbPosition() {
+    const thumbPosition = (1 - currentVolume) * volumeTrack.offsetHeight;
+    volumeThumb.style.top = `${thumbPosition}px`;
+  }
+</script>
+
 </body>
 </html>

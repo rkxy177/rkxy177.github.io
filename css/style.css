@@ -1,34 +1,18 @@
-/* 全局重置 */
+/* 重置默认 margin/padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
+/* 全屏视频背景样式 */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持比例并覆盖整个屏幕 */
+  z-index: -1; /* 确保视频在内容下方 */
 }
 
-
-/* 导航栏 */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #333;
-  color: #fff;
-}
-
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 1rem;
-}
-
-.navbar a:hover {
-  text-decoration: underline;
-}
