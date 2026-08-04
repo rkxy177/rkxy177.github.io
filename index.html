@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="个人网站 - 开发者、创作者、思考者">
+    <title>rkxy177 | 个人网站</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+    <!-- ===== Custom Cursor ===== -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- ===== Navigation ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>rkxy177<span class="logo-bracket"> /&gt;</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#home" class="nav-link active">首页</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">关于</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">技能</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">项目</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">联系</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Hero Section ===== -->
+    <section id="home" class="hero">
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            <p class="hero-greeting">你好，我是</p>
+            <h1 class="hero-name">rkxy177</h1>
+            <div class="hero-typing">
+                <span class="typing-prefix">我是一名</span>
+                <span class="typing-text" id="typingText"></span>
+                <span class="typing-cursor">|</span>
+            </div>
+            <p class="hero-description">
+                热爱技术，专注于构建优雅、高效的数字体验。
+                探索代码与设计的无限可能。
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> 查看作品
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fas fa-paper-plane"></i> 联系我
+                </a>
+            </div>
+            <div class="hero-social">
+                <a href="https://github.com/rkxy177" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="邮箱">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="博客">
+                    <i class="fas fa-blog"></i>
+                </a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="向下滚动">
+            <span class="scroll-mouse">
+                <span class="scroll-wheel"></span>
+            </span>
+            <span class="scroll-arrow"><i class="fas fa-chevron-down"></i></span>
+        </a>
+    </section>
+
+    <!-- ===== About Section ===== -->
+    <section id="about" class="section about">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-number">01.</h2>
+                <h2 class="section-title">关于我</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        你好！我是 <strong>rkxy177</strong>，一个热爱技术与创造的开发者。
+                    </p>
+                    <p>
+                        我专注于<span class="highlight">前端开发</span>与<span class="highlight">用户界面设计</span>，
+                        致力于将复杂的想法转化为简洁、直观的数字产品。
+                        我相信好的代码就像好的文字——清晰、有力、直击要害。
+                    </p>
+                    <p>
+                        目前，我在探索<span class="highlight">全栈开发</span>、<span class="highlight">人工智能应用</span>
+                        以及<span class="highlight">开源社区</span>的无限可能。
+                        工作之余，我喜欢阅读技术博客、参与开源项目，
+                        偶尔也会写一些技术分享文章。
+                    </p>
+                    <p>这里是我在互联网上的一片小天地，欢迎探索！</p>
+
+                    <div class="about-tags">
+                        <span class="tag"># 开发者</span>
+                        <span class="tag"># 终身学习者</span>
+                        <span class="tag"># 开源爱好者</span>
+                        <span class="tag"># 极简主义</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-image-wrapper">
+                        <div class="about-image-placeholder">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <div class="about-image-border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Skills Section ===== -->
+    <section id="skills" class="section skills">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-number">02.</h2>
+                <h2 class="section-title">技能栈</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Frontend -->
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>前端开发</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">HTML5 / CSS3</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript / TypeScript</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">React / Vue.js</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Tailwind CSS</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-server"></i>
+                        <h3>后端开发</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js / Express</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python / FastAPI</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL / MongoDB</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">RESTful API</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>工具与环境</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Git / GitHub</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 65%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Linux / 命令行</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">VS Code / Neovim</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Tags -->
+            <div class="tech-tags reveal">
+                <span>TypeScript</span><span>Python</span><span>React</span><span>Vue</span>
+                <span>Node.js</span><span>Docker</span><span>Git</span><span>Linux</span>
+                <span>REST</span><span>GraphQL</span><span>MongoDB</span><span>PostgreSQL</span>
+                <span>Tailwind</span><span>Figma</span><span>CI/CD</span><span>AI/ML</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Projects Section ===== -->
+    <section id="projects" class="section projects">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-number">03.</h2>
+                <h2 class="section-title">项目作品</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card reveal">
+                    <div class="project-folder">
+                        <i class="far fa-folder-open"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">项目一</h3>
+                        <p class="project-description">
+                            一个展示个人作品与想法的网站，采用现代设计语言，注重用户体验与性能优化。
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link" aria-label="外部链接">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal">
+                    <div class="project-folder">
+                        <i class="far fa-folder-open"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">项目二</h3>
+                        <p class="project-description">
+                            基于 React 构建的全栈 Web 应用，集成了现代开发工作流与云服务部署方案。
+                        </p>
+                        <div class="project-tech">
+                            <span>React</span><span>Node.js</span><span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link" aria-label="外部链接">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal">
+                    <div class="project-folder">
+                        <i class="far fa-folder-open"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">项目三</h3>
+                        <p class="project-description">
+                            一个命令行工具，提升开发效率，支持自动化工作流与自定义配置。
+                        </p>
+                        <div class="project-tech">
+                            <span>TypeScript</span><span>Node.js</span><span>CLI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link" aria-label="外部链接">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card reveal">
+                    <div class="project-folder">
+                        <i class="far fa-folder-open"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">项目四</h3>
+                        <p class="project-description">
+                            探索 AI 技术的前沿应用，将机器学习模型集成到实际产品中。
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span><span>FastAPI</span><span>AI/ML</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link" aria-label="外部链接">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-more reveal">
+                <a href="https://github.com/rkxy177" target="_blank" rel="noopener" class="btn btn-outline">
+                    <i class="fab fa-github"></i> GitHub 上查看更多
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Contact Section ===== -->
+    <section id="contact" class="section contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-number">04.</h2>
+                <h2 class="section-title">联系我</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-content reveal">
+                <h3 class="contact-heading">来打个招呼吧！</h3>
+                <p class="contact-text">
+                    无论你是想讨论技术、合作项目，还是只是想说声你好，
+                    我都很乐意收到你的消息。我的收件箱永远为你敞开。
+                </p>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">你的名字</label>
+                        <input type="text" id="name" name="name" placeholder="请输入你的名字" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱地址</label>
+                        <input type="email" id="email" name="email" placeholder="请输入你的邮箱" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">消息内容</label>
+                        <textarea id="message" name="message" rows="5" placeholder="你想说些什么呢？" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit">
+                        <i class="fas fa-paper-plane"></i> 发送消息
+                    </button>
+                </form>
+
+                <div class="contact-alternative">
+                    <p>或者直接通过以下方式找到我：</p>
+                    <div class="contact-links">
+                        <a href="https://github.com/rkxy177" target="_blank" rel="noopener" class="contact-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="mailto:your-email@example.com" class="contact-link">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-social">
+                <a href="https://github.com/rkxy177" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" aria-label="邮箱">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="#" aria-label="博客">
+                    <i class="fas fa-blog"></i>
+                </a>
+                <a href="#" aria-label="RSS">
+                    <i class="fas fa-rss"></i>
+                </a>
+            </div>
+            <p class="footer-text">
+                由 <strong>rkxy177</strong> 设计 &amp; 构建 · &copy; <span id="currentYear"></span>
+            </p>
+            <p class="footer-sub">用 <i class="fas fa-heart"></i> 和 <i class="fas fa-coffee"></i> 驱动</p>
+        </div>
+    </footer>
+
+    <!-- ===== Back to Top ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
