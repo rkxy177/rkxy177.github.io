@@ -284,6 +284,7 @@ function initSmoothScroll() {
    ============================================================ */
 function initBackToTop() {
     const btn = document.getElementById('backToTop');
+    if (!btn) return;
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 500) {
